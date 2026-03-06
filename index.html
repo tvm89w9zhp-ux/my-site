@@ -1,0 +1,223 @@
+!DOCTYPE html
+html lang=ru
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+
+titleСвадьба Даниэль и Дианаtitle
+
+link href=httpsfonts.googleapis.comcss2family=Playfair+Displaywght@500&family=Montserratwght@300;400&display=swap rel=stylesheet
+
+style
+
+body{
+margin0;
+font-familyMontserrat;
+background#f5f1e8;
+color#3d4d3f;
+}
+
+.container{
+max-width500px;
+marginauto;
+}
+
+.section{
+padding70px 25px;
+text-aligncenter;
+opacity0;
+transformtranslateY(40px);
+transition1s;
+}
+
+.section.show{
+opacity1;
+transformtranslateY(0);
+}
+
+h1{
+font-familyPlayfair Display;
+font-size40px;
+margin-bottom10px;
+}
+
+h2{
+font-familyPlayfair Display;
+font-size28px;
+margin-bottom15px;
+}
+
+button{
+padding15px 30px;
+bordernone;
+background#5f7d61;
+colorwhite;
+font-size16px;
+border-radius30px;
+cursorpointer;
+}
+
+.timer{
+font-size22px;
+margin-top15px;
+}
+
+.colors{
+displayflex;
+flex-wrapwrap;
+justify-contentcenter;
+gap15px;
+margin-top20px;
+}
+
+.color{
+width45px;
+height45px;
+border-radius50%;
+box-shadow0 2px 6px rgba(0,0,0,0.15);
+}
+
+#open{
+positionfixed;
+height100%;
+width100%;
+background#f5f1e8;
+displayflex;
+flex-directioncolumn;
+justify-contentcenter;
+align-itemscenter;
+z-index10;
+text-aligncenter;
+}
+
+#open h1{
+font-size44px;
+}
+
+.invite-btn{
+margin-top25px;
+}
+
+.small{
+font-size14px;
+opacity0.7;
+}
+
+style
+head
+
+body
+
+div id=open
+
+h1Даниэль 
+&
+ Дианаh1
+
+pприглашают вас на свадьбуp
+
+button class=invite-btn onclick=openInvite()Открыть приглашениеbutton
+
+div
+
+div class=container
+
+div class=section
+h1Даниэль & Дианаh1
+p26 июня 2026p
+div class=timer id=timerdiv
+div
+
+div class=section
+h2Церемонияh2
+p26.06.2026p
+p1540p
+p class=smallПросьба прийти за 20 минутp
+div
+
+div class=section
+h2Банкетh2
+p1730p
+pСтерлитамакp
+pDoskip
+p class=smallул. Гоголя 175p
+div
+
+div class=section
+h2Дресс-кодh2
+
+div class=colors
+
+div class=color style=backgroundblackdiv
+div class=color style=background#3b2f2fdiv
+div class=color style=background#a1866fdiv
+div class=color style=background#fffff0div
+div class=color style=background#e8d8c4div
+div class=color style=background#b7c9b0div
+div class=color style=background#78866bdiv
+
+div
+
+div
+
+div class=section
+h2Пожеланиеh2
+pЖелательно без детейp
+div
+
+div class=section
+h2Подтвердите присутствиеh2
+button onclick=alert('Напишите нам для подтверждения ❤️')RSVPbutton
+div
+
+div
+
+script
+
+function openInvite(){
+document.getElementById(open).style.display=none
+}
+
+const weddingDate = new Date(June 26, 2026 154000).getTime()
+
+setInterval(function(){
+
+const now = new Date().getTime()
+
+const distance = weddingDate - now
+
+const days = Math.floor(distance(1000606024))
+
+const hours = Math.floor((distance%(1000606024))(10006060))
+
+const minutes = Math.floor((distance%(10006060))(100060))
+
+document.getElementById(timer).innerHTML =
+days+ дней +hours+ часов +minutes+ минут
+
+},1000)
+
+const sections = document.querySelectorAll(.section)
+
+function showSections(){
+
+sections.forEach(sec = {
+
+const top = sec.getBoundingClientRect().top
+
+if(top  window.innerHeight - 100){
+sec.classList.add(show)
+}
+
+})
+
+}
+
+window.addEventListener(scroll, showSections)
+
+showSections()
+
+script
+
+body
+html
